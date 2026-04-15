@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 int recurse(char* rusak, int current, int target){
-	if(rusak[current]) return 0;
-
 	if(current > target) return 0;
 	if(current == target) return 1;
+
+	if(rusak[current]) return 0;
 
 	int result = recurse(rusak, current + 1, target) + recurse(rusak, current + 2, target);
 	printf("%d %d %d\n", current, target, result);
