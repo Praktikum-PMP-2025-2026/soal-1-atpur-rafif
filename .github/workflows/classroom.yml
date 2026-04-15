@@ -103,7 +103,7 @@ jobs:
           setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
           command: ./soal1
           input: "6 1 4"
-          expected-output: "2"
+          expected-output: "3"
           comparison-method: exact
           timeout: 2
           max-score: 10
