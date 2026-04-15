@@ -1,5 +1,31 @@
 #include <stdio.h>
 
-int main(void) {
-    return 0;
+int recurse(char* rusak, int current, int target){
+	if(rusak[current]) return 0;
+
+	if(current > target) return 0;
+	if(current == target) return 1;
+
+	return recurse(rusak, current + 1, target) + recurse(rusak, current + 2, target);
+}
+
+int main(){
+	int n;
+	scanf("%d", &n);
+
+	int r;
+	scanf("%d", &r);
+
+	char R[n];
+	for(int i = 0; i < n; ++i)
+		R[i] = 0;
+
+	for(int i = 0; i < r; ++i){
+		int t;
+		scanf("%d", &t);
+		R[t] = 1;
+	}
+
+	int result = recurse(R, 0, n);
+	printf("%d", result);
 }
