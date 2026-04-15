@@ -27,5 +27,5 @@ int main(){
 	}
 
 	int result = recurse(R, 0, n);
-	printf("%d", result);
+	printf("%d\n", result);
 }
