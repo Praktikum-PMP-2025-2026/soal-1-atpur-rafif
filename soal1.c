@@ -6,9 +6,7 @@ int recurse(char* rusak, int current, int target){
 
 	if(rusak[current]) return 0;
 
-	int result = recurse(rusak, current + 1, target) + recurse(rusak, current + 2, target);
-	printf("%d %d %d\n", current, target, result);
-	return result;
+	return recurse(rusak, current + 1, target) + recurse(rusak, current + 2, target);
 }
 
 int main(){
@@ -27,11 +25,6 @@ int main(){
 		scanf("%d", &t);
 		R[t] = 1;
 	}
-
-	printf("%d %d\n", n, r);
-	for(int i = 0; i < n; ++i)
-		printf("%d ", R[i]);
-	printf("\n");
 
 	int result = recurse(R, 0, n);
 	printf("%d\n", result);
